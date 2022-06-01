@@ -1,32 +1,116 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*  .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+} 
+ */
+
+Legend{
+  text-align: left;
+} 
+
+.infosection{
+  text-align: center;
+  border: 2px solid black;
+  width: 70vw;
+  margin: 20px auto;
+  padding: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.infosection *{
+  margin: 5px;
 }
+
+button{
+  width: 150px;
+  height: 30px;
+  margin: 10px auto;
+  display: block;
+}
+.edit{
+  display: none;
+}
+
+.leader{
+  font-size: 46px;
+  margin-bottom: 0;
+}
+.lead{
+  color:rgb(73, 114, 131) ;
+  margin: 10px 0 ;
+  font-size: 25px;
+}
+
+.experienced,.educationd{
+  width: 100%;
+  position: relative;  
+}
+
+
+
+.details{
+  font-size: 18px;
+  margin: 0 0;
+  font-weight: 500;
+}
+
+.ranged,.dated{
+  font-weight:300;
+}
+
+.summaryd{
+  font-weight: 300;
+  font-size: 18px;
+}
+
+
+.positiond{
+  margin-bottom: 5px;
+}
+
+
+.displaywrapper{
+  width: clamp(600px,90%,650px);  
+  border: 2px solid black;
+  min-height: 850px;
+  padding:20px 40px 25px 40px;
+  display: none;
+  word-wrap: break-word;
+  margin: 10px auto;
+}
+
+hr{
+  width: 100%;
+}
+
+
+.right{
+  position: relative;
+  left: 100px;
+}
+
+.contact{
+  font-size: 15px;
+}
+
+#jobd{
+  margin-top: 0;
+}
+
+.extras{
+  display: none ;
+}
+
+@media screen and (min-width:1200px) {
+    .displaywrapper{
+      max-width: 750px
+    }
+}
+
 
 @keyframes App-logo-spin {
   from {
