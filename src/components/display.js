@@ -37,8 +37,8 @@ class Display extends Component{
                 <h1 className='lead'>Education</h1>
                 <Educationdetail school={this.props.school} course={this.props.course} date={this.props.date}/>
 
-                {/* To be used for adding extra education details */}
-                {this.state.isComponentVisible ? <Educationdetail school={this.props.school} course={this.props.course} date={this.props.date}/>: null}   
+                {/* 
+                {this.state.isComponentVisible ? <Educationdetail school={this.props.school} course={this.props.course} date={this.props.date}/>: null}    */}
 
                 <div className="experienced">                
                     <h1 className='lead'>Work Experience</h1>
@@ -53,3 +53,4 @@ class Display extends Component{
 
 
 export default Display
+export{Educationdetail}

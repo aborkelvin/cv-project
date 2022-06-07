@@ -4,6 +4,7 @@ import Display from './components/display';
 import GeneralInfo from './components/generalinfo';
 import EducationInfo from './components/educationinfo';
 import ExperienceInfo from './components/experienceinfo';
+import { Educationdetail } from './components/display';
 
 class App extends Component{
   constructor(props){
@@ -14,7 +15,7 @@ class App extends Component{
       job:'',
       mail:'',
       phone:'',
-      schoolname:'',
+      schoolname:[],
       course:'',
       studydate:'',
       companyname:'',
@@ -45,19 +46,22 @@ class App extends Component{
     let summary  = document.querySelector('.summary');
     let startdate  = document.querySelector('.startdate');
     let enddate  = document.querySelector('.enddate');
+
+    
     let hideforms = document.querySelectorAll('.infosection');
       hideforms.forEach(function(item){
       item.style.display = 'none';
     }) 
 
     console.log(schoolname[0].value)
+    
     this.setState({
       name:name.value,
       job:job.value,
       mail:mail.value,
       phone:phone.value,
-      
-      schoolname:schoolname.value,
+
+      schoolname:this.state.schoolname.concat(schoolname),
 
       course:course.value,
       studydate:studydate.value,
@@ -72,6 +76,7 @@ class App extends Component{
     if(displaywrapper){
     displaywrapper.style.display = 'block'
     }
+
     document.querySelector('.submit').style.display = 'none'
     document.querySelector('.edit').style.display = 'block'
   }
@@ -110,11 +115,11 @@ class App extends Component{
         {this.state.isComponentVisible ? <EducationInfo/> : null}   
         <ExperienceInfo/>
         <button className='extras'>Add Experience</button>
-        <Display name ={this.state.name} mail={this.state.mail} phone={this.state.phone}  school ={this.state.schoolname} 
+
+        {this.state.schoolname[0]? <Display name ={this.state.name} mail={this.state.mail} phone={this.state.phone}  school={this.state.schoolname[0].value}
         course={this.state.course} date={this.state.studydate} company={this.state.companyname} position ={this.state.position} 
-        summary={this.state.summary} startdate = {this.state.startdate} enddate = {this.state.enddate} job={this.state.job}/>
-        
-        
+        summary={this.state.summary} startdate = {this.state.startdate} enddate = {this.state.enddate} job={this.state.job}/> :null}
+                
         <button onClick = {this.submitforms} className='submit'>Submit Application</button>
         <button onClick={this.editforms} className='edit'>Edit Application</button>
 
